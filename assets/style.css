@@ -1,0 +1,342 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   MedStatDoc — Custom Streamlit Styling
+   Medical-themed design with glassmorphism, smooth gradients, and
+   color-coded status badges.
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Import Premium Fonts ───────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Root Variables ─────────────────────────────────────────────────────── */
+:root {
+    --bg-primary: #0a0e1a;
+    --bg-secondary: #111827;
+    --bg-card: rgba(17, 24, 39, 0.8);
+    --bg-glass: rgba(255, 255, 255, 0.03);
+    --border-glass: rgba(255, 255, 255, 0.08);
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-blue: #3b82f6;
+    --accent-cyan: #06b6d4;
+    --accent-emerald: #10b981;
+    --accent-amber: #f59e0b;
+    --accent-red: #ef4444;
+    --accent-purple: #8b5cf6;
+    --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #10b981 100%);
+    --gradient-header: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.1);
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+}
+
+/* ── Global Overrides ───────────────────────────────────────────────────── */
+.stApp {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* ── Main Header Styling ────────────────────────────────────────────────── */
+.main-header {
+    text-align: center;
+    padding: 2.5rem 1rem 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.main-header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 40%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.main-header .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ── Glass Card ─────────────────────────────────────────────────────────── */
+.glass-card {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ── Category Header ────────────────────────────────────────────────────── */
+.category-header {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-glass);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ── Status Badges ──────────────────────────────────────────────────────── */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.status-normal {
+    background: rgba(16, 185, 129, 0.12);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.status-borderline {
+    background: rgba(245, 158, 11, 0.12);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.status-flagged {
+    background: rgba(239, 68, 68, 0.12);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+/* ── Metric Cards ───────────────────────────────────────────────────────── */
+.metric-card {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-md);
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.metric-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.metric-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ── Result Row ─────────────────────────────────────────────────────────── */
+.result-row {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+
+.result-row:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.result-param {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.result-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--accent-cyan);
+}
+
+.result-stats {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* ── Risk Assessment Card ───────────────────────────────────────────────── */
+.risk-card {
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.risk-low {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.risk-moderate {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(251, 191, 36, 0.08) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.risk-high {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(248, 113, 113, 0.08) 100%);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.risk-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+}
+
+.risk-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* ── Explanation Box ────────────────────────────────────────────────────── */
+.explanation-box {
+    background: rgba(59, 130, 246, 0.05);
+    border-left: 3px solid var(--accent-blue);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 1rem 1.5rem;
+    margin: 0.8rem 0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* ── Sidebar Styling ────────────────────────────────────────────────────── */
+.sidebar-header {
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.sidebar-header h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ── Disclaimer Banner ──────────────────────────────────────────────────── */
+.disclaimer {
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.disclaimer strong {
+    color: var(--accent-purple);
+}
+
+/* ── Tab Styling ────────────────────────────────────────────────────────── */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+    padding: 0 0.5rem;
+}
+
+.stTabs [data-baseweb="tab"] {
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* ── Form Enhancement ───────────────────────────────────────────────────── */
+.stNumberInput > div > div > input {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.95rem !important;
+}
+
+/* ── Custom Divider ─────────────────────────────────────────────────────── */
+.custom-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border-glass) 50%, transparent 100%);
+    margin: 1.5rem 0;
+}
+
+/* ── Animation: Fade In ─────────────────────────────────────────────────── */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.4s ease-out forwards;
+}
+
+/* ── Animation: Pulse Glow ──────────────────────────────────────────────── */
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.1); }
+    50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.2); }
+}
+
+.pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* ── Scrollbar Styling ──────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
